@@ -1,0 +1,265 @@
+[
+  {
+    "id": "caramel-appletini",
+    "name": "Caramel Appletini",
+    "category": "Signature Cocktails",
+    "subcategory": "Sweet & Fruity",
+    "image": "Caramel_appletini.jpg",
+    "description": "A luscious blend of caramel vodka and butterscotch liqueur brings rich buttery sweetness, perfectly balanced with crisp apple syrup and fresh apple juice. This indulgent cocktail delights the palate with smooth caramel notes and a fruity apple finish, making it a cozy and elegant treat.",
+    "ingredients": [
+      "1.5 oz Caramel Vodka",
+      "0.25 oz Apple syrup",
+      "0.25 oz Caramel syrup",
+      "1 oz Apple juice",
+      "0.5 oz Butterscotch liqueur"
+    ],
+    "instructions": [
+      "Combine caramel vodka, apple syrup, caramel syrup, apple juice, and butterscotch liqueur in a shaker filled with ice.",
+      "Shake vigorously until well chilled.",
+      "Strain into a chilled martini glass.",
+      "Optionally, garnish with an apple slice or a drizzle of caramel syrup.",
+      "Serve immediately and enjoy."
+    ],
+    "occasions": ["Winter", "Christmas", "Aperitif & Digestif"],
+    "flavorProfiles": ["Sweet", "Fruity"]
+  },
+  {
+    "id": "cherry-bubble",
+    "name": "Cherry Bubble",
+    "category": "Signature Cocktails",
+    "subcategory": "Effervescent",
+    "image": "cherry_bubble.png",
+    "description": "The Cherry Bubble is a vibrant and playful cocktail that combines the sweet tartness of Cherry Sourz with the smoothness of raspberry vodka. Enhanced by bubble gum syrup and fresh lime juice, it delivers a refreshing balance of fruity and tangy flavors. Topped with fizzy lemonade and garnished with a cherry, this effervescent drink is perfect for celebrations and warm evenings.",
+    "ingredients": [
+      "0.5 oz Cherry Sourz",
+      "1 oz Raspberry Vodka",
+      "0.25 oz Bubble Gum Syrup",
+      "0.5 oz Lime Juice",
+      "Top with Lemonade",
+      "Cherry for garnish",
+      "Ice cubes"
+    ],
+    "instructions": [
+      "Fill a tall glass with ice cubes.",
+      "In a cocktail shaker filled with ice, combine Cherry Sourz, raspberry vodka, bubble gum syrup, and lime juice.",
+      "Shake vigorously until well chilled.",
+      "Strain the mixture into the prepared tall glass over the ice.",
+      "Top with lemonade to fill the glass.",
+      "Garnish with a fresh cherry on top.",
+      "Serve immediately and enjoy!"
+    ],
+    "occasions": ["Spring Summer", "Valentine's Day", "New Year's", "Aperitif & Digestif"],
+    "flavorProfiles": ["Fruity", "Sour", "Sweet"]
+  },
+  {
+    "id": "dragon-fruit-martini",
+    "name": "Dragon Fruit Martini",
+    "category": "Signature Cocktails",
+    "subcategory": "Exotic",
+    "image": "Dragon-Fruit-Martini-cocktail.png",
+    "description": "This Dragon Fruit Martini is a vibrant and exotic cocktail that delights the senses with the delicate floral notes of pink gin and lychee liqueur. The sweet bubble gum syrup and fresh dragon fruit puree provide a luscious, fruity base, balanced perfectly by zesty lime juice and simple syrup. A dash of foamer (egg white) adds a silky, frothy texture, making this drink both elegant and refreshing.",
+    "ingredients": [
+      "1 oz Pink Gin",
+      "0.25 oz Bubble Gum Syrup",
+      "0.25 oz Lychee Liqueur",
+      "1 oz Dragon fruit puree",
+      "0.5 oz Lime juice",
+      "0.5 oz Simple syrup",
+      "Dash of Foamer (egg white)",
+      "Ice cubes"
+    ],
+    "instructions": [
+      "Add all ingredients including the dash of foamer into a cocktail shaker.",
+      "Fill the shaker with ice and shake vigorously for about 15 seconds to chill and froth.",
+      "Double strain the mixture into a medium-sized chilled martini glass to ensure smooth texture.",
+      "Garnish with a slice of dragon fruit or a lime twist, if desired.",
+      "Serve immediately and enjoy the exotic flavors!"
+    ],
+    "occasions": ["Spring Summer", "Valentine's Day", "Aperitif & Digestif"],
+    "flavorProfiles": ["Fruity", "Sweet"]
+  },
+  {
+    "id": "orange-passion",
+    "name": "Orange Passion",
+    "category": "Signature Cocktails",
+    "subcategory": "Citrusy",
+    "image": "Orange_Passion-Cocktail.jpg",
+    "description": "The Orange Passion is a vibrant and refreshing cocktail bursting with bright citrus flavors and tropical passion fruit. Featuring the smooth and aromatic Tanqueray Sevilla Gin, balanced with tangy passion fruit puree and syrup, and a hint of bitter-sweet Aperol, this drink is perfectly finished with a dash of lime juice and the delightful crunch of passion fruit seeds.",
+    "ingredients": [
+      "1 oz Tanqueray Sevilla Gin",
+      "0.5 oz Passion fruit puree",
+      "0.25 oz Passion fruit syrup",
+      "Dash of Aperol",
+      "Passion fruit seeds",
+      "0.25 oz Lime juice",
+      "Ice cubes"
+    ],
+    "instructions": [
+      "Add gin, passion fruit puree, passion fruit syrup, Aperol, lime juice, and ice to a shaker.",
+      "Shake vigorously until well chilled.",
+      "Strain into a tall glass filled with fresh ice.",
+      "Garnish with orange zest and sprinkle passion fruit seeds on top.",
+      "Serve immediately and enjoy the bright, citrusy flavors!"
+    ],
+    "occasions": ["Spring Summer", "Aperitif & Digestif", "New Year's"],
+    "flavorProfiles": ["Fruity", "Bitter", "Sour", "Sweet"]
+  },
+  {
+    "id": "peach-crush",
+    "name": "Peach Crush",
+    "category": "Signature Cocktails",
+    "subcategory": "Citrusy",
+    "image": "peach_crush.jpg",
+    "description": "A vibrant, juicy blend of peach and citrus flavors, the Peach Crush is a refreshing signature cocktail perfect for warm evenings or brunch gatherings. With Absolut Mandarin Vodka and Archers Peach Schnapps at its core, this drink delivers a sweet, tangy punch balanced with apple juice and a hint of lime. Served over ice in a whiskey glass, it's as visually stunning as it is delicious.",
+    "ingredients": [
+      "1 oz Absolut Mandarin Vodka",
+      "1 oz Peach puree",
+      "Dash of Lime juice",
+      "Dash of Peach syrup",
+      "1/2 oz Archers Peach Schnapps",
+      "1 oz Apple juice",
+      "Peach slice and Mint for garnish"
+    ],
+    "instructions": [
+      "Fill a cocktail shaker with ice.",
+      "Add Absolut Mandarin Vodka, peach puree, lime juice, peach syrup, Peach Schnapps, and apple juice.",
+      "Shake well for about 10–15 seconds until well chilled.",
+      "Fill a whiskey glass with fresh ice.",
+      "Strain the cocktail into the prepared glass.",
+      "Garnish with a peach slice and a sprig of mint."
+    ],
+    "occasions": ["Spring Summer", "Aperitif & Digestif", "New Year's"],
+    "flavorProfiles": ["Fruity", "Sweet", "Sour"]
+  },
+  {
+    "id": "mai-tai",
+    "name": "Mai Tai",
+    "category": "Signature Cocktails",
+    "subcategory": "Rum Cocktails",
+    "image": "Mai_Tai_recipe.jpg",
+    "description": "A tropical classic with a modern twist, this Mai Tai blends Captain Morgan TIKI Rum with citrus, almond, and nutty flavors for a perfectly balanced and bold cocktail. Hints of orange, lime, and amaretto create a smooth, refreshing experience. Served over ice and garnished with mint and lime, it's an irresistible island escape in a glass.",
+    "ingredients": [
+      "1 oz Captain Morgan TIKI Rum",
+      "1/2 oz Orange Liqueur",
+      "1/2 oz Lime juice",
+      "1/2 oz Almond syrup",
+      "3/4 oz Disaronno",
+      "3/4 oz Triple Sec",
+      "Lime slice and Mint for garnish"
+    ],
+    "instructions": [
+      "Add all ingredients except garnish into a cocktail shaker filled with ice.",
+      "Shake vigorously for about 10 seconds.",
+      "Fill a rocks or tiki glass with fresh ice.",
+      "Strain the cocktail into the prepared glass.",
+      "Garnish with a lime slice and a fresh mint sprig."
+    ],
+    "occasions": ["Spring Summer", "Aperitif & Digestif"],
+    "flavorProfiles": ["Fruity", "Sweet", "Bitter", "Sour"]
+  },
+  {
+    "id": "cheesse-cake-martini",
+    "name": "Cheesecake Martini",
+    "category": "Signature Cocktails",
+    "subcategory": "Dessert Cocktails",
+    "image": "Cheessecake-Martini.jpg",
+    "description": "Rich, creamy, and indulgently sweet, the Cheesecake Martini is a dessert in a glass. Combining Absolut Vodka with strawberry puree, Disaronno, and a drizzle of strawberry syrup, this cocktail mimics the flavor of strawberry cheesecake. Finished with a dollop of double cream and a biscuit crumble garnish, it's the perfect after-dinner treat.",
+    "ingredients": [
+      "1 oz Absolut Vodka",
+      "1 oz Strawberry puree",
+      "1/2 oz Strawberry syrup",
+      "1/2 oz Disaronno",
+      "Double cream topping",
+      "Breakfast biscuit and Strawberry for garnish"
+    ],
+    "instructions": [
+      "Fill a cocktail shaker with ice.",
+      "Add Absolut Vodka, strawberry puree, strawberry syrup, and Disaronno.",
+      "Shake vigorously for 10-15 seconds until well chilled.",
+      "Strain into a chilled martini glass.",
+      "Top with a spoonful of double cream (gently floated or layered).",
+      "Garnish with crushed breakfast biscuit and a fresh strawberry."
+    ],
+    "occasions": ["Dessert", "Winter", "Christmas", "Valentine's Day", "Aperitif & Digestif"],
+    "flavorProfiles": ["Sweet", "Savory"]
+  },
+  {
+    "id": "fruit-punch",
+    "name": "Fruity Punch",
+    "category": "Signature Cocktails",
+    "subcategory": "Tropical Cocktails",
+    "image": "Fruity_Punch.jpg",
+    "description": "A vibrant, tropical explosion of flavor, the Fruity Punch brings together exotic syrups and juices with a Caribbean rum base. Featuring passion fruit, mango, and pineapple notes, this cocktail is juicy, sweet, and tangy — like a holiday in a glass. Served chilled and loaded with fresh fruit slices, it’s made for sunny days and festive vibes.",
+    "ingredients": [
+      "1 oz Captain Morgan TIKI Rum",
+      "1 oz Passoa liqueur",
+      "3/4 oz Passion fruit syrup",
+      "3/4 oz Mango syrup",
+      "3/4 oz Pineapple syrup",
+      "1 oz Pineapple juice",
+      "Mixed fruit slices (lime, orange, pineapple) for garnish"
+    ],
+    "instructions": [
+      "Fill a shaker with ice.",
+      "Add Captain Morgan TIKI Rum, Passoa liqueur, all syrups, and pineapple juice.",
+      "Shake well for 10-12 seconds until well chilled.",
+      "Strain into a tall glass filled with fresh ice.",
+      "Garnish with a mix of lime, orange, and pineapple slices."
+    ],
+    "occasions": ["Spring Summer", "Aperitif & Digestif", "New Year's"],
+    "flavorProfiles": ["Fruity", "Sweet", "Sour"]
+  },
+  {
+    "id": "after-eight-martini",
+    "name": "After Eight Martini",
+    "category": "Signature Cocktails",
+    "subcategory": "Dessert Cocktails",
+    "image": "after_eight_martini.jpg",
+    "description": "Rich, smooth, and indulgently minty, the After Eight Martini is a dessert cocktail that echoes the beloved mint chocolate confection. With Baileys, white chocolate liqueur, vodka, and a hint of cool mint, this elegant drink is silky, sweet, and perfect for after dinner. Finished with a chocolate-rimmed glass and fresh mint, it’s both luxurious and refreshing.",
+    "ingredients": [
+      "1/2 oz Absolut Vodka",
+      "1/2 oz Mint liqueur",
+      "1 oz Baileys Irish Cream",
+      "1/2 oz Mozart White Chocolate Liqueur",
+      "Chocolate sauce on the rim of the glass",
+      "Whipped cream on top",
+      "Mint leaves for garnish (optional)"
+    ],
+    "instructions": [
+      "Chill a martini glass and rim it with chocolate sauce.",
+      "Fill a cocktail shaker with ice.",
+      "Add vodka, mint liqueur, Baileys, and white chocolate liqueur.",
+      "Shake well for 10-12 seconds until chilled and creamy.",
+      "Strain into the prepared martini glass.",
+      "Top with whipped cream.",
+      "Garnish with a fresh mint leaf (optional).",
+      "Dust the top lightly with cocoa powder or chocolate shavings for presentation (optional)."
+    ],
+    "occasions": ["Dessert", "Winter", "Christmas", "Valentine's Day", "Aperitif & Digestif"],
+    "flavorProfiles": ["Sweet", "Savory"]
+  },
+  {
+    "id": "lychee-martini",
+    "name": "Lychee Martini",
+    "category": "Signature Cocktails",
+    "subcategory": "Fruity Martinis",
+    "image": "Lychee_martini.jpg",
+    "description": "A refreshing twist on the classic martini, the Lychee Martini is light, floral, and subtly sweet. Blending mandarin vodka, lychee liqueur, and lychee purée, this cocktail delivers exotic fruit flavors with a smooth citrus finish. It's a sophisticated choice for summer nights or elegant occasions.",
+    "ingredients": [
+      "1 oz Absolut Mandarin Vodka",
+      "1/2 oz Lychee Liqueur",
+      "1/2 oz Triple Sec (Cointreau)",
+      "1 oz Lychee Puree",
+      "Lychee fruit for garnish"
+    ],
+    "instructions": [
+      "Chill a martini glass by placing it in the freezer or filling it with ice water for a few minutes.",
+      "Add vodka, lychee liqueur, triple sec, and lychee purée into a cocktail shaker filled with ice.",
+      "Shake vigorously for 10-15 seconds until well chilled.",
+      "Strain into the chilled martini glass.",
+      "Garnish with a whole lychee fruit on a skewer or floated in the drink."
+    ],
+    "occasions": ["Spring Summer", "Valentine's Day", "Aperitif & Digestif"],
+    "flavorProfiles": ["Fruity", "Sweet"]
+  }
+]

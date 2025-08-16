@@ -1,0 +1,59 @@
+[
+  {
+    "title": "Espresso Martini",
+    "type": "cocktail",
+    "subcategory": "signature",
+    "temperature": "cold",
+    "videoUrl": "https://youtu.be/8b1aZwdcRmQ",
+    "ingredients": [
+      "2 oz vodka",
+      "1 oz espresso",
+      "1 oz coffee liqueur",
+      "Ice"
+    ],
+    "steps": [
+      "Add vodka, espresso, and coffee liqueur to shaker with ice.",
+      "Shake vigorously until chilled.",
+      "Strain into a chilled martini glass.",
+      "Garnish with coffee beans."
+    ]
+  },
+  {
+    "title": "Virgin Mojito",
+    "type": "mocktail",
+    "subcategory": "classic",
+    "temperature": "cold",
+    "videoUrl": "https://youtu.be/Nbs3V3XqjJQ",
+    "ingredients": [
+      "10 fresh mint leaves",
+      "1 oz lime juice",
+      "2 tsp sugar",
+      "Club soda",
+      "Ice"
+    ],
+    "steps": [
+      "Muddle mint leaves with lime juice and sugar in a glass.",
+      "Fill glass with ice.",
+      "Top with club soda.",
+      "Stir gently and garnish with mint sprig."
+    ]
+  },
+  {
+    "title": "Classic Cappuccino",
+    "type": "coffee",
+    "subcategory": "flat white",
+    "temperature": "hot",
+    "videoUrl": "https://youtu.be/5pS_XzS9G30",
+    "ingredients": [
+      "1 shot espresso",
+      "Steamed milk",
+      "Milk foam"
+    ],
+    "steps": [
+      "Pull a shot of espresso into your cup.",
+      "Add steamed milk to fill 2/3 of the cup.",
+      "Top with milk foam.",
+      "Sprinkle with cocoa powder if desired."
+    ]
+  }
+]
