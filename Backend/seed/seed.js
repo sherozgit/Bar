@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Recipe = require('../models/Recipe');
 const classicCocktails = require('../data/classicCocktails.json');
 const signatureCocktails = require('../data/signatureCocktails.json');
-
+ 
 const data = [...classicCocktails, ...signatureCocktails];
 
 mongoose.connect('mongodb://localhost:27017/bartenderApp', {
