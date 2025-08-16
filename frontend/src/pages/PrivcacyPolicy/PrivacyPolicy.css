@@ -1,0 +1,142 @@
+/* Container background and padding */
+.privacy-container {
+  background: linear-gradient(135deg, #f7f9fc, #e3ebf4);
+  min-height: 100vh;
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  animation: fadeInBg 1s ease-in-out;
+}
+
+/* Fade-in background animation */
+@keyframes fadeInBg {
+  from { background-position: 200% 0; }
+  to { background-position: 0 100%; }
+}
+
+/* Card styling */
+.privacy-card {
+  background: #ffffff;
+  max-width: 800px;
+  width: 100%;
+  padding: 50px;
+  border-radius: 25px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+  font-family: 'Arial', sans-serif;
+  position: relative;
+  overflow: hidden;
+  transform: translateY(0);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect on card */
+.privacy-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+}
+
+/* Optional gradient overlay */
+.privacy-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(120deg, rgba(255,255,255,0.05), rgba(0,0,0,0.02));
+  pointer-events: none;
+}
+
+/* Headings */
+.privacy-card h1 {
+  text-align: center;
+  font-size: 42px;
+  margin-bottom: 30px;
+  background: linear-gradient(90deg, #6ca0dc, #a0d8ef);
+  background-clip: text;            
+  -webkit-background-clip: text;    
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 1px;
+  animation: fadeInText 1s ease-in;
+}
+
+/* Subheading animations */
+@keyframes fadeInText {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.privacy-card h2 {
+  font-size: 28px;
+  margin-top: 30px;
+  margin-bottom: 12px;
+  color: #3a3a3a;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.privacy-card h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: #6ca0dc;
+  margin-top: 6px;
+  border-radius: 2px;
+}
+
+/* Subheading hover color change */
+.privacy-card h2:hover {
+  color: #5a7da0;
+}
+
+/* Paragraphs */
+.privacy-card p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 15px;
+  transition: color 0.3s ease;
+}
+
+/* Section hover effect */
+.privacy-card section:hover p {
+  color: #333;
+}
+
+/* Links styling */
+.privacy-card a {
+  color: #6ca0dc;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.privacy-card a:hover {
+  text-decoration: underline;
+  color: #5a7da0;
+}
+
+/* Sections spacing */
+.privacy-card section {
+  margin-bottom: 30px;
+  padding: 10px;
+  border-left: 4px solid #a0d8ef;
+  transition: border-color 0.3s ease;
+}
+
+.privacy-card section:hover {
+  border-color: #6ca0dc;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .privacy-card {
+    padding: 35px;
+  }
+
+  .privacy-card h1 {
+    font-size: 36px;
+  }
+
+  .privacy-card h2 {
+    font-size: 22px;
+  }
+}
