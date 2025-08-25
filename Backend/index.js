@@ -1,8 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const morgan = require('morgan'); // ✅ Add Morgan
 const recipeRoutes = require('./api/recipes');
-require('dotenv').config();  // ✅ Load .env variables
+require('dotenv').config();  // Load .env variables
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -11,16 +12,22 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-// MongoDB Connection (using Atlas connection from .env)
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-})
-.then(() => console.log('✅ Connected to MongoDB Atlas'))
-.catch((err) => console.error('❌ MongoDB connection error:', err));
+// Morgan for HTTP request logging
+app.use(morgan('combined'));  // Logs detailed requests to console / Render logs
+
+// MongoDB Connection (Atlas URI from .env)
+mongoose.connect(process.env.MONGO_URI) // removed deprecated options
+  .then(() => console.log('✅ Connected to MongoDB Atlas'))
+  .catch((err) => console.error('❌ MongoDB connection error:', err));
 
 // Routes
 app.use('/recipes', recipeRoutes);
+
+// Optional: Error handling middleware
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).json({ error: 'Something went wrong!' });
+});
 
 // Start server
 app.listen(port, () => {
