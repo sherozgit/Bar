@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { fetchRecipes } from '../api/recipesApi'; // ✅ import helper
 import './ClassicCocktails.css';
 
 const ClassicCocktailsPage = () => {
   const [classicCocktails, setClassicCocktails] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/recipes?category=Classic Cocktails')
-      .then(res => res.json())
+    fetchRecipes({ category: 'Classic Cocktails' })
       .then(data => setClassicCocktails(data))
       .catch(err => console.error('Error fetching classic cocktails:', err));
   }, []);
@@ -40,7 +40,6 @@ const ClassicCocktailsPage = () => {
             </Link>
           </div>
         ))}
-
       </div>
     </div>
   );

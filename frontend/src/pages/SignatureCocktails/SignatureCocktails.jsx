@@ -1,10 +1,29 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import cocktails from '../../data/cocktails/cocktailData';
-import './SignatureCocktails.css'; // Reusing the same CSS
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { fetchRecipes } from "../../api/recipesApi"; // API helper
+import "./SignatureCocktails.css";
 
 const SignatureCocktailsPage = () => {
-  const signatureCocktails = cocktails.filter(c => c.category === 'Signature Cocktails');
+  const [signatureCocktails, setSignatureCocktails] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    setLoading(true);
+    fetchRecipes({ category: "Signature Cocktails" })
+      .then((data) => {
+        setSignatureCocktails(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Error fetching signature cocktails:", err);
+        setError("Failed to load signature cocktails");
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) return <p>Loading signature cocktails...</p>;
+  if (error) return <p>{error}</p>;
 
   return (
     <div className="classic-cocktails-page"> {/* reused class */}
@@ -19,15 +38,14 @@ const SignatureCocktailsPage = () => {
 
       <div className="cocktail-list">
         {signatureCocktails.map((cocktail, index) => (
-          <div key={cocktail.id} className="cocktail-card">
+          <div key={cocktail._id} className="cocktail-card">
             <h3>
-              {index + 1}.{' '}
+              {index + 1}.{" "}
               <Link to={`/signature/${cocktail.id}`} className="cocktail-name-link">
                 {cocktail.name}
               </Link>
             </h3>
 
-            {/* Wrap image with aspect ratio container */}
             <div className="cocktail-image-wrapper">
               <img src={`/images/${cocktail.image}`} alt={cocktail.name} />
             </div>

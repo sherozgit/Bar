@@ -1,22 +1,45 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import RecipeCategory from "./RecipesCategory.jsx";
+import { fetchRecipes } from "../api/recipesApi";
 
 const RecipesCategoryWrapper = () => {
   const { category } = useParams();
   const [activeFilter, setActiveFilter] = useState("all");
+  const [cocktails, setCocktails] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   const handleFilterChange = (filterValue) => {
     setActiveFilter(filterValue);
   };
+
+  useEffect(() => {
+    setLoading(true);
+    fetchRecipes({ category }) // fetch data from backend with optional query
+      .then((data) => {
+        setCocktails(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Error fetching recipes:", err);
+        setError("Failed to fetch recipes");
+        setLoading(false);
+      });
+  }, [category]);
 
   const commonProps = {
     backLink: "/recipes",
     backLinkText: "← Cocktail & Other Recipes",
     activeFilter,
     onFilterChange: handleFilterChange,
-    category, // ✅ Add this so filtering logic knows the type
+    category,
+    data: cocktails, // pass fetched data
+    showFilterHeader: true,
   };
+
+  if (loading) return <p>Loading recipes...</p>;
+  if (error) return <p>{error}</p>;
 
   // === SPIRIT CATEGORY ===
   if (category === "by-spirit") {
@@ -30,12 +53,6 @@ const RecipesCategoryWrapper = () => {
               subtle base of vodka in your cocktail, find the recipe you're
               searching for by spirit.
             </p>
-            <p>
-              With a huge number of spirits in a constantly evolving market,
-              it's hard to figure out what to drink and how to drink it. Find
-              out what's new in the spirits world, including new bottles to try
-              and great ways to drink them.
-            </p>
           </>
         }
         filters={[
@@ -44,7 +61,6 @@ const RecipesCategoryWrapper = () => {
           { label: "Vodka Cocktails", value: "Vodka Cocktails" },
           { label: "Rum Cocktails", value: "Rum Cocktails" },
           { label: "Scotch Cocktails", value: "Scotch Cocktails" },
-          { label: "Rye Whiskey Cocktails", value: "Rye Whiskey Cocktails" },
           { label: "Other Whiskey Cocktails", value: "Other Whiskey Cocktails" },
           { label: "Tequila & Mezcal Cocktails", value: "Tequila & Mezcal Cocktails" },
           { label: "Cognac & Other Brandy Cocktails", value: "Cognac & Other Brandy Cocktails" },
@@ -64,16 +80,8 @@ const RecipesCategoryWrapper = () => {
           <>
             <h1>Recipes by Occasion</h1>
             <p>
-              <a href="/recipes" className="back-link-inline">
-                ← Cocktail & Other Recipes
-              </a>
-            </p>
-            <p>
               Whether it's to celebrate a holiday, embrace a season or enjoy
-              the time of day, we have a drink for every occasion. From New
-              Year's Eve sparklers and winter warmers to aperitifs and
-              nightcaps, there's a drink to serve every need. Find your perfect
-              match and start mixing.
+              the time of day, we have a drink for every occasion.
             </p>
           </>
         }
@@ -104,9 +112,6 @@ const RecipesCategoryWrapper = () => {
           <>
             <h1>Recipes by Flavor Profile</h1>
             <p>
-              <a href="/recipes">← Cocktail & Other Recipes</a>
-            </p>
-            <p>
               Whether you like it sweet, sour, savory or bitter — we’ve got a
               cocktail that fits your palate.
             </p>
@@ -127,6 +132,7 @@ const RecipesCategoryWrapper = () => {
       />
     );
   }
+
   // === COCKTAIL TYPE CATEGORY ===
   if (category === "cocktail-type") {
     return (
@@ -136,7 +142,7 @@ const RecipesCategoryWrapper = () => {
             <h1>Recipes by Type</h1>
             <p>
               From pre-Prohibition classics, punches and modern riffs to frozen drinks and Tiki standards, 
-              there's a type of drink to fit your mood and palate. Check out all the drink types you can make and start mixing.
+              there's a type of drink to fit your mood and palate.
             </p>
           </>
         }

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./RecipesCategory.css";
-import classicCocktails from "../../data/cocktails/ClassicCocktails";
-import signatureCocktails from "../../data/cocktails/SignatureCocktails";
+import { fetchRecipes } from "../../api/recipesApi";
 
 const RecipesCategory = ({
   description,
@@ -12,34 +11,34 @@ const RecipesCategory = ({
   activeFilter,
   onFilterChange,
   category,
-  data,
-  showFilterHeader = true, // ✅ new prop with default value
+  showFilterHeader = true,
 }) => {
   const MAX_VISIBLE = 6;
   const [visibleFilters, setVisibleFilters] = useState([]);
   const [showDropdown, setShowDropdown] = useState(false);
+  const [allCocktails, setAllCocktails] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setVisibleFilters(filters.slice(0, MAX_VISIBLE));
   }, [filters]);
 
+  useEffect(() => {
+    const loadData = async () => {
+      setLoading(true);
+      const data = await fetchRecipes(category);
+      setAllCocktails(data);
+      setLoading(false);
+    };
+    loadData();
+  }, [category]);
+
   const toggleDropdown = () => setShowDropdown((prev) => !prev);
 
   const handleFilterSelect = (selectedFilter) => {
-    if (visibleFilters.some((f) => f.value === selectedFilter.value)) {
-      onFilterChange(selectedFilter.value);
-      setShowDropdown(false);
-      return;
-    }
-
-    const updatedFilters = [...visibleFilters];
-    updatedFilters[MAX_VISIBLE - 1] = selectedFilter;
-    setVisibleFilters(updatedFilters);
     onFilterChange(selectedFilter.value);
     setShowDropdown(false);
   };
-
-  const allCocktails = data || [...classicCocktails, ...signatureCocktails];
 
   const filteredCocktails = allCocktails.filter((cocktail) => {
     if (activeFilter === "all") return true;
@@ -62,6 +61,8 @@ const RecipesCategory = ({
   const remainingFilters = filters.filter(
     (f) => !visibleFilters.some((v) => v.value === f.value)
   );
+
+  if (loading) return <p>Loading recipes...</p>;
 
   return (
     <div className="recipes-category">
@@ -114,19 +115,10 @@ const RecipesCategory = ({
       )}
 
       <div className="results">
-        {showFilterHeader && (
-          <p>
-            Showing recipes for:{" "}
-            <strong>
-              {activeFilter === "all" ? "All Cocktails" : activeFilter}
-            </strong>
-          </p>
-        )}
-
         <div className="recipe-grid">
           {filteredCocktails.map((cocktail) => {
-            // Determine path prefix based on category
-            const categoryPath = cocktail.category === "Classic Cocktails" ? "classic-cocktails" : "signature";
+            const categoryPath =
+              cocktail.category === "Classic Cocktails" ? "classic-cocktails" : "signature";
 
             return (
               <Link
@@ -135,7 +127,6 @@ const RecipesCategory = ({
                 className="recipe-card-link"
               >
                 <div className="recipe-card">
-                  {/* Updated image src */}
                   <img src={`/images/${cocktail.image}`} alt={cocktail.name} />
                   <h4>{cocktail.name}</h4>
                   <p className="subcategory">{cocktail.subcategory}</p>

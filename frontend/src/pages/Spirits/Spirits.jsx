@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom"; // <-- import Link
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import RecipeCategory from "../Recipes/RecipesCategory.jsx";
-import allCocktails from "../../data/cocktails/cocktailData.js"; // ✅ combined cocktail data
+import { fetchRecipes } from "../../api/recipesApi"; // ✅ Use central API helper
 import "./Spirits.css";
 
 const spiritFilters = [
@@ -22,41 +22,61 @@ const spiritFilters = [
 
 const Spirits = () => {
   const [activeFilter, setActiveFilter] = useState("all");
+  const [cocktails, setCocktails] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
-  const handleFilterChange = (filterValue) => {
-    setActiveFilter(filterValue);
-  };
+  const handleFilterChange = (filterValue) => setActiveFilter(filterValue);
+
+  // Fetch cocktails by spirit
+  useEffect(() => {
+    setLoading(true);
+    const params = activeFilter !== "all" ? { subcategory: activeFilter } : {};
+    fetchRecipes(params)
+      .then((data) => {
+        setCocktails(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.error("Error fetching spirits:", err);
+        setError("Failed to load cocktails");
+        setLoading(false);
+      });
+  }, [activeFilter]);
 
   return (
     <>
-      <RecipeCategory
-        description={
-          <>
-            <h1>Spirits & Liqueurs</h1>
-            <p>
-              With a huge number of spirit and liqueur brands on the market,
-              it's hard to figure out what to drink. Let us help you find your
-              new favorite bottle to try and cocktail to mix.
-            </p>
-          </>
-        }
-        filters={spiritFilters}
-        activeFilter={activeFilter}
-        onFilterChange={handleFilterChange}
-        backLink="/"
-        backLinkText="← Back to Home"
-        category="by-spirit"
-        data={allCocktails} // ✅ Inject cocktails from shared data
-      />
+      {loading && <p>Loading cocktails...</p>}
+      {error && <p>{error}</p>}
 
-      {/* New section with links to each spirit subpage */}
+      {!loading && !error && (
+        <RecipeCategory
+          description={
+            <>
+              <h1>Spirits & Liqueurs</h1>
+              <p>
+                With a huge number of spirit and liqueur brands on the market,
+                it's hard to figure out what to drink. Let us help you find
+                your new favorite bottle to try and cocktail to mix.
+              </p>
+            </>
+          }
+          filters={spiritFilters}
+          activeFilter={activeFilter}
+          onFilterChange={handleFilterChange}
+          backLink="/"
+          backLinkText="← Back to Home"
+          category="by-spirit"
+          data={cocktails} // ✅ now fetched from backend
+        />
+      )}
+
       <div className="spirit-links-container">
         <h2>Explore by Spirit</h2>
         <ul className="spirit-links-list">
           {spiritFilters
-            .filter((filter) => filter.value !== "all") // skip "All"
+            .filter((filter) => filter.value !== "all")
             .map((filter) => {
-              // create URL slug from label
               const slug = filter.label.toLowerCase().replace(/\s+/g, "-");
               return (
                 <li key={filter.value}>

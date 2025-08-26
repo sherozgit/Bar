@@ -20,11 +20,8 @@ const CocktailDetail = () => {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`http://localhost:5000/recipes/${id}`)
-      .then(res => {
-        if (!res.ok) throw new Error('Cocktail not found');
-        return res.json();
-      })
+
+    fetchRecipeById(id)
       .then(data => {
         setCocktail(data);
         setLoading(false);
@@ -34,6 +31,7 @@ const CocktailDetail = () => {
         setLoading(false);
       });
   }, [id]);
+
 
   if (loading) {
     return (
