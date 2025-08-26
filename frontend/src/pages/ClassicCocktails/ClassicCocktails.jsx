@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { fetchRecipes } from '../api/recipesApi'; // ✅ import helper
+import { fetchRecipes } from '../../api/recipesApi';
 import './ClassicCocktails.css';
 
 const ClassicCocktailsPage = () => {

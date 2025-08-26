@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import SPIRIT_PAGES from "./SpiritPagesConfig";
-import { fetchRecipes } from "../../api/recipesApi";
+import { fetchRecipes } from '../../api/recipesApi';
 import "./SpiritCategoryPage.css";
 
 const SpiritCategoryPage = () => {

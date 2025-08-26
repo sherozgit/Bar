@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./RecipesCategory.css";
-import { fetchRecipes } from "../../api/recipesApi";
+import { fetchRecipes } from '../../api/recipesApi';
 
 const RecipesCategory = ({
   description,

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import RecipeCategory from "./RecipesCategory.jsx";
-import { fetchRecipes } from "../api/recipesApi";
+import { fetchRecipes } from '../../api/recipesApi';
 
 const RecipesCategoryWrapper = () => {
   const { category } = useParams();

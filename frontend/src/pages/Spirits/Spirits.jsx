@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import RecipeCategory from "../Recipes/RecipesCategory.jsx";
-import { fetchRecipes } from "../../api/recipesApi"; // ✅ Use central API helper
+import { fetchRecipes } from '../../api/recipesApi';
 import "./Spirits.css";
 
 const spiritFilters = [
