@@ -3,6 +3,18 @@ const express = require('express');
 const router = express.Router();
 const Recipe = require('../models/Recipe');
 
+
+// GET all recipes
+router.get('/', async (req, res) => {
+  try {
+    const recipes = await Recipe.find();
+    res.json(recipes);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Server error' });
+  }
+});
+
 // GET a single recipe by custom id/slug
 router.get('/:id', async (req, res) => {
   try {
