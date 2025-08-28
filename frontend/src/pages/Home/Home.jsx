@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import cocktails from '../../data/cocktails/cocktailData';  // Import your data file
+import { fetchRecipes } from '../../api/recipesApi';
 import './Home.css';
 
 const Home = () => {
-  // Filter cocktails by category
-  const classicCocktails = cocktails.filter(c => c.category === 'Classic Cocktails').slice(0, 4);
-  const signatureCocktails = cocktails.filter(c => c.category === 'Signature Cocktails').slice(0, 4);
+  const [classicCocktails, setClassicCocktails] = useState([]);
+  const [signatureCocktails, setSignatureCocktails] = useState([]);
+
+  useEffect(() => {
+    // Fetch Classic Cocktails
+    fetchRecipes({ category: 'Classic Cocktails' })
+      .then(data => setClassicCocktails(data.slice(0, 4))) // limit to 4 for home
+      .catch(err => console.error('Error fetching classic cocktails:', err));
+
+    // Fetch Signature Cocktails
+    fetchRecipes({ category: 'Signature Cocktails' })
+      .then(data => setSignatureCocktails(data.slice(0, 4))) // limit to 4 for home
+      .catch(err => console.error('Error fetching signature cocktails:', err));
+  }, []);
 
   return (
     <div className="landing-container">
@@ -14,12 +25,14 @@ const Home = () => {
       {/* Classic Cocktails Section */}
       <section className="section-header">
         <h2>
-          <Link to="/slideshows/classic-cocktails" className="section-link">Classic Cocktails</Link>
+          <Link to="/slideshows/classic-cocktails" className="section-link">
+            Classic Cocktails
+          </Link>
         </h2>
         <div className="card-grid">
           {classicCocktails.map(cocktail => (
             <Link
-              key={cocktail.id}
+              key={cocktail._id}
               to={`/classic-cocktails/${cocktail.id}`}
               className="card-link"
             >
@@ -38,12 +51,14 @@ const Home = () => {
       {/* Signature Cocktails Section */}
       <section className="section-header">
         <h2>
-          <Link to="/signature" className="section-link">Signature Cocktails</Link>
+          <Link to="/signature" className="section-link">
+            Signature Cocktails
+          </Link>
         </h2>
         <div className="card-grid">
           {signatureCocktails.map(cocktail => (
             <Link
-              key={cocktail.id}
+              key={cocktail._id}
               to={`/signature/${cocktail.id}`}
               className="card-link"
             >
