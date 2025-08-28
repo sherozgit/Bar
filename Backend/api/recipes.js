@@ -4,10 +4,17 @@ const router = express.Router();
 const Recipe = require('../models/Recipe');
 
 
-// GET all recipes
+// GET all recipes (with optional category filter)
 router.get('/', async (req, res) => {
   try {
-    const recipes = await Recipe.find();
+    const { category } = req.query; // get category from query string
+
+    let filter = {};
+    if (category) {
+      filter.category = category; // filter recipes by category if provided
+    }
+
+    const recipes = await Recipe.find(filter);
     res.json(recipes);
   } catch (err) {
     console.error(err);
