@@ -1,1 +1,30 @@
-[]
+[
+  {
+    "id": "midori-sour",
+    "name": "Midori Sour",
+    "category": "Signature Cocktails",
+    "subcategory": "Melon Cocktails",
+    "image": "midori-sour.jpg",
+    "description": "The Midori Sour is a sweet and slightly sour cocktail with a delicious melon flavor. The bright green drink is perfect for summer and easy to make at home. Combined with fresh citrus juice from lemons and limes, the Midori Sour doesn't need additional sweetening, as the Midori melon liqueur already brings enough sweetness.",
+    "ingredients": [
+      "2 oz Midori",
+      "1 oz Vodka",
+      "0.5 oz Fresh lime juice",
+      "0.5 oz Fresh lemon juice",
+      "0.5 oz Chilled soda water",
+      "Cherry and lemon or lime slice for garnish"
+    ],
+    "instructions": [
+      "Fill a glass with ice cubes and set aside while mixing.",
+      "Add Midori, Vodka, lime juice, and lemon juice into a shaker and shake for about 10 seconds.",
+      "Strain the content into the prepared glass.",
+      "Add a splash of chilled soda water.",
+      "Garnish with a cherry and a slice of lemon or lime.",
+      "Serve and enjoy!"
+    ],
+    "occasions": ["Summer", "Party", "Brunch"],
+    "flavorProfiles": ["Sweet", "Sour", "Fruity"]
+  }
+
+
+]
