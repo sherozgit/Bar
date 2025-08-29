@@ -62,7 +62,44 @@ const RecipesCategory = ({
     (f) => !visibleFilters.some((v) => v.value === f.value)
   );
 
-  if (loading) return <p>Loading recipes...</p>;
+  if (loading) {
+    return (
+      <div className="recipes-category">
+        {backLink && (
+          <p>
+            <a href={backLink} className="back-link">{backLinkText}</a>
+          </p>
+        )}
+
+        <div className="description">{description}</div>
+
+        {showFilterHeader && visibleFilters.length > 0 && (
+          <div className="filters">
+            <h3>Showing Recipes for:</h3>
+            <ul className="filter-list">
+              {visibleFilters.map((filter) => (
+                <li key={filter.value} className={filter.value === activeFilter ? "active" : ""}>
+                  <button>{filter.label}</button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        <div className="results">
+          <div className="recipe-grid">
+            {[...Array(6)].map((_, i) => (
+              <div key={i} className="recipe-card skeleton-card">
+                <div className="skeleton skeleton-image"></div>
+                <div className="skeleton skeleton-text"></div>
+                <div className="skeleton skeleton-text short"></div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="recipes-category">

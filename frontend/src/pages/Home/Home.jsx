@@ -6,18 +6,33 @@ import './Home.css';
 const Home = () => {
   const [classicCocktails, setClassicCocktails] = useState([]);
   const [signatureCocktails, setSignatureCocktails] = useState([]);
+  const [loadingClassic, setLoadingClassic] = useState(true);
+  const [loadingSignature, setLoadingSignature] = useState(true);
 
   useEffect(() => {
     // Fetch Classic Cocktails
+    setLoadingClassic(true);
     fetchRecipes({ category: 'Classic Cocktails' })
       .then(data => setClassicCocktails(data.slice(0, 4))) // limit to 4 for home
-      .catch(err => console.error('Error fetching classic cocktails:', err));
+      .catch(err => console.error('Error fetching classic cocktails:', err))
+      .finally(() => setLoadingClassic(false));
 
     // Fetch Signature Cocktails
+    setLoadingSignature(true);
     fetchRecipes({ category: 'Signature Cocktails' })
       .then(data => setSignatureCocktails(data.slice(0, 4))) // limit to 4 for home
-      .catch(err => console.error('Error fetching signature cocktails:', err));
+      .catch(err => console.error('Error fetching signature cocktails:', err))
+      .finally(() => setLoadingSignature(false));
   }, []);
+
+  // Skeleton card component
+  const SkeletonCard = () => (
+    <div className="card-link animate-pulse">
+      <div className="w-full h-40 bg-gray-300 rounded"></div>
+      <div className="h-4 bg-gray-300 mt-2 w-2/3 rounded"></div>
+      <div className="h-4 bg-gray-300 mt-1 w-1/2 rounded"></div>
+    </div>
+  );
 
   return (
     <div className="landing-container">
@@ -30,21 +45,24 @@ const Home = () => {
           </Link>
         </h2>
         <div className="card-grid">
-          {classicCocktails.map(cocktail => (
-            <Link
-              key={cocktail._id}
-              to={`/classic-cocktails/${cocktail.id}`}
-              className="card-link"
-            >
-              <img 
-                src={`/images/${cocktail.image}`} 
-                alt={cocktail.name} 
-                className="card-img" 
-              />
-              <span className="card-subtitle">{cocktail.subcategory}</span>
-              <span className="card-title">{cocktail.name}</span>
-            </Link>
-          ))}
+          {loadingClassic
+            ? [...Array(4)].map((_, i) => <SkeletonCard key={i} />)
+            : classicCocktails.map(cocktail => (
+              <Link
+                key={cocktail._id}
+                to={`/classic-cocktails/${cocktail.id}`}
+                className="card-link"
+              >
+                <img
+                  src={`/images/${cocktail.image}`}
+                  alt={cocktail.name}
+                  className="card-img"
+                />
+                <span className="card-subtitle">{cocktail.subcategory}</span>
+                <span className="card-title">{cocktail.name}</span>
+              </Link>
+            ))
+          }
         </div>
       </section>
 
@@ -56,21 +74,24 @@ const Home = () => {
           </Link>
         </h2>
         <div className="card-grid">
-          {signatureCocktails.map(cocktail => (
-            <Link
-              key={cocktail._id}
-              to={`/signature/${cocktail.id}`}
-              className="card-link"
-            >
-              <img 
-                src={`/images/${cocktail.image}`} 
-                alt={cocktail.name} 
-                className="card-img" 
-              />
-              <span className="card-subtitle">{cocktail.subcategory}</span>
-              <span className="card-title">{cocktail.name}</span>
-            </Link>
-          ))}
+          {loadingSignature
+            ? [...Array(4)].map((_, i) => <SkeletonCard key={i} />)
+            : signatureCocktails.map(cocktail => (
+              <Link
+                key={cocktail._id}
+                to={`/signature/${cocktail.id}`}
+                className="card-link"
+              >
+                <img
+                  src={`/images/${cocktail.image}`}
+                  alt={cocktail.name}
+                  className="card-img"
+                />
+                <span className="card-subtitle">{cocktail.subcategory}</span>
+                <span className="card-title">{cocktail.name}</span>
+              </Link>
+            ))
+          }
         </div>
       </section>
 

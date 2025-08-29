@@ -37,13 +37,35 @@ const CocktailDetail = () => {
   if (loading) {
     return (
       <div className="cocktail-detail-page">
+        {/* Skeleton Title */}
         <div className="skeleton skeleton-title"></div>
-        <div className="skeleton skeleton-image"></div>
+
+        {/* Skeleton Image */}
+        <div className="skeleton skeleton-image large"></div>
+
+        {/* Skeleton Description */}
         <div className="skeleton skeleton-text"></div>
         <div className="skeleton skeleton-text short"></div>
+
+        {/* Skeleton Ingredients */}
+        <div className="skeleton skeleton-subtitle"></div>
+        <ul>
+          {[...Array(4)].map((_, i) => (
+            <li key={i} className="skeleton skeleton-text short"></li>
+          ))}
+        </ul>
+
+        {/* Skeleton Steps */}
+        <div className="skeleton skeleton-subtitle"></div>
+        <ol>
+          {[...Array(3)].map((_, i) => (
+            <li key={i} className="skeleton skeleton-text"></li>
+          ))}
+        </ol>
       </div>
     );
   }
+
 
   if (error) {
     return (

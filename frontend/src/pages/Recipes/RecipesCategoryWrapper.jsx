@@ -37,8 +37,33 @@ const RecipesCategoryWrapper = () => {
     data: cocktails, // pass fetched data
     showFilterHeader: true,
   };
+  if (loading) {
+    return (
+      <div className="recipes-category">
+        <p>
+          <a href="/recipes" className="back-link">
+            ← Cocktail & Other Recipes
+          </a>
+        </p>
 
-  if (loading) return <p>Loading recipes...</p>;
+        <div className="description">
+          <h1>Loading Recipes...</h1>
+          <p>Please wait while we fetch the recipes for you.</p>
+        </div>
+
+        <div className="recipe-grid">
+          {[...Array(6)].map((_, i) => (
+            <div key={i} className="recipe-card skeleton-card">
+              <div className="skeleton skeleton-image"></div>
+              <div className="skeleton skeleton-text"></div>
+              <div className="skeleton skeleton-text short"></div>
+            </div>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
   if (error) return <p>{error}</p>;
 
   // === SPIRIT CATEGORY ===

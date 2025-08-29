@@ -28,7 +28,6 @@ const Spirits = () => {
 
   const handleFilterChange = (filterValue) => setActiveFilter(filterValue);
 
-  // Fetch cocktails by spirit
   useEffect(() => {
     setLoading(true);
     const params = activeFilter !== "all" ? { subcategory: activeFilter } : {};
@@ -46,7 +45,19 @@ const Spirits = () => {
 
   return (
     <>
-      {loading && <p>Loading cocktails...</p>}
+      {/* Skeleton cards while loading */}
+      {loading && (
+        <div className="recipe-grid">
+          {[...Array(6)].map((_, i) => (
+            <div key={i} className="recipe-card skeleton-card">
+              <div className="skeleton skeleton-image"></div>
+              <div className="skeleton skeleton-text"></div>
+              <div className="skeleton skeleton-text short"></div>
+            </div>
+          ))}
+        </div>
+      )}
+
       {error && <p>{error}</p>}
 
       {!loading && !error && (
@@ -67,7 +78,7 @@ const Spirits = () => {
           backLink="/"
           backLinkText="← Back to Home"
           category="by-spirit"
-          data={cocktails} // ✅ now fetched from backend
+          data={cocktails}
         />
       )}
 
