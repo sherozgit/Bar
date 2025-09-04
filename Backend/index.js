@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const morgan = require('morgan'); // ✅ Add Morgan
 const recipeRoutes = require('./api/recipes');
+const barSchoolRoutes = require('./api/barschool')
 require('dotenv').config();  // Load .env variables
 
 const app = express();
@@ -27,6 +28,8 @@ app.get('/', (req, res) => {
 
 // Routes
 app.use('/recipes', recipeRoutes);
+app.use('/barschool', barSchoolRoutes);
+
 
 // Optional: Error handling middleware
 app.use((err, req, res, next) => {
