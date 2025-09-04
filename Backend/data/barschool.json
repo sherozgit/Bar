@@ -1,0 +1,34 @@
+[
+  {
+    "id": "alcohol-differences",
+    "title": "What’s the Difference Between Vodka, Rum, Tequila, Gin & Liqueur?",
+    "subtitle": "Spirits Guide",
+    "image": "Alcohols-difference.png",
+    "url": "/bar-school/alcohol-differences",
+    "description": "Learn the key differences between major spirits, their history, and best cocktail uses."
+  },
+  {
+    "id": "gin-types",
+    "title": "Understanding the Main Types of Gin",
+    "subtitle": "Gin Basics",
+    "image": "gin-types_london-dry-gin.jpg",
+    "url": "/barschool/gin-types",
+    "description": "From London Dry to Old Tom, explore the gin families and their unique profiles."
+  },
+  {
+    "id": "martini-guide",
+    "title": "The Right Way to Order a Martini",
+    "subtitle": "Cocktail Ordering",
+    "image": "dry-martini.jpg",
+    "url": "/bar-school/martini-guide",
+    "description": "Shaken or stirred? Learn the terminology to order your perfect martini."
+  },
+  {
+    "id": "bourbon-basics",
+    "title": "What Is Bourbon? A Beginner’s Guide",
+    "subtitle": "Whiskey 101",
+    "image": "Bourbon.jpg",
+    "url": "/bar-school/bourbon-basics",
+    "description": "Everything you need to know about bourbon’s history, rules, and flavor profile."
+  }
+]
