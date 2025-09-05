@@ -1,0 +1,125 @@
+{
+  "id": "base-spirits",
+  "title": "The Six Base Spirits",
+  "subtitle": "Brandy, Gin, Rum, Tequila, Vodka, Whiskey",
+  "image": "base-spirits.jpg",
+  "intro": {
+    "text": "Among the many distilled spirits available, there are just six base liquors: brandy, gin, rum, tequila, vodka, and whiskey. While distilled using similar methods, each is unique in flavor, and there are distinct styles within each category."
+  },
+  "sections": [
+    {
+      "name": "Brandy",
+      "image": "brandy-glass.jpg",
+      "description": "Brandy is often enjoyed on its own. It's popularly featured in several classic cocktails and tends to be used in drinks that include just a few ingredients.",
+      "facts": [
+        { "label": "Distilled From", "value": "Fruit (grapes, apples, apricots, cherries, peaches)" },
+        { "label": "Flavor Profile", "value": "Fruity burnt wine with a pleasant oakiness" },
+        { "label": "Aged", "value": "Varies by style, typically aged in oak" },
+        { "label": "Produced In", "value": "Worldwide (Cognac, Armagnac, Pisco, etc.)" },
+        { "label": "Styles", "value": "Cognac, Armagnac, Spanish Brandy, Pisco, American Brandy, Grappa, Eau-de-vie, Flavored Brandy" },
+        { "label": "Alcohol Content", "value": "Typically 40% ABV" },
+        { "label": "Regulations", "value": "No distinct worldwide regulations; some regional rules apply" }
+      ],
+      "cocktails": [
+        { "name": "Apricot Sour", "image": "apricot-sour.jpg" },
+        { "name": "Brandy Crusta", "image": "brandy-crusta.jpg" },
+        { "name": "French Connection", "image": "french-connection.jpg" }
+      ]
+    },
+    {
+      "name": "Gin",
+      "image": "gin-bottles.jpg",
+      "description": "Gin is a spirit flavored with juniper berries and other botanicals. Its dry profile makes it perfect for martinis and other classic cocktails.",
+      "facts": [
+        { "label": "Distilled From", "value": "Neutral grains such as barley, corn, rye, wheat" },
+        { "label": "Flavor Profile", "value": "Herbal, piney aroma" },
+        { "label": "Aged", "value": "Typically unaged" },
+        { "label": "Produced In", "value": "Worldwide, especially Netherlands and UK" },
+        { "label": "Styles", "value": "London Dry, Plymouth, Old Tom, Genever, New American" },
+        { "label": "Alcohol Content", "value": "40–47% ABV" },
+        { "label": "Regulations", "value": "Juniper berries must be included" }
+      ],
+      "cocktails": [
+        { "name": "Negroni", "image": "negroni.jpg" },
+        { "name": "Gin Rickey", "image": "gin-rickey.jpg" },
+        { "name": "The Last Word", "image": "last-word.jpg" }
+      ]
+    },
+    {
+      "name": "Rum",
+      "image": "rum-bottles.jpg",
+      "description": "Rum's sweeter flavor makes it versatile and ideal for tropical and warm cocktails.",
+      "facts": [
+        { "label": "Distilled From", "value": "Sugarcane or molasses" },
+        { "label": "Flavor Profile", "value": "Sweet toasted sugar taste, varies by style and region" },
+        { "label": "Aged", "value": "Light rum usually unaged; dark rums aged in oak" },
+        { "label": "Produced In", "value": "Caribbean, South America, and worldwide" },
+        { "label": "Styles", "value": "Light, Gold, Dark, Overproof, Spiced, Cachaça, Flavored" },
+        { "label": "Alcohol Content", "value": "Typically 40% ABV" },
+        { "label": "Regulations", "value": "Some styles have regional laws; no universal rules" }
+      ],
+      "cocktails": [
+        { "name": "Hurricane", "image": "hurricane.jpg" },
+        { "name": "Rum and Coke", "image": "rum-coke.jpg" },
+        { "name": "Planter's Punch", "image": "planters-punch.jpg" }
+      ]
+    },
+    {
+      "name": "Tequila",
+      "image": "tequila-bottles.jpg",
+      "description": "Tequila mixes well in cocktails like margaritas and spicy drinks, made from fermented agave.",
+      "facts": [
+        { "label": "Distilled From", "value": "Agave plant" },
+        { "label": "Flavor Profile", "value": "Vegetal, earthy, semi-sweet, spicy tones" },
+        { "label": "Aged", "value": "Blanco: unaged; Reposado & Añejo: aged in barrels" },
+        { "label": "Produced In", "value": "Mexico only" },
+        { "label": "Styles", "value": "Blanco, Reposado, Añejo, Extra-Añejo, Gold" },
+        { "label": "Alcohol Content", "value": "40–50% ABV" },
+        { "label": "Regulations", "value": "Strictly regulated by Appellation of Origin; CRT oversight" }
+      ],
+      "cocktails": [
+        { "name": "Tequila Sunrise", "image": "tequila-sunrise.jpg" },
+        { "name": "Cadillac Margarita", "image": "cadillac-margarita.jpg" },
+        { "name": "Ranch Water", "image": "ranch-water.jpg" }
+      ]
+    },
+    {
+      "name": "Vodka",
+      "image": "vodka-bottles.jpg",
+      "description": "Vodka is neutral, versatile, and forms the base of countless sweet and savory cocktails.",
+      "facts": [
+        { "label": "Distilled From", "value": "Grains or potatoes, sometimes beets or grapes" },
+        { "label": "Flavor Profile", "value": "Neutral, varies by base and distillation method" },
+        { "label": "Aged", "value": "Rarely aged" },
+        { "label": "Produced In", "value": "Worldwide" },
+        { "label": "Styles", "value": "Neutral, flavored, craft variations" },
+        { "label": "Alcohol Content", "value": "Typically 40–50% ABV" },
+        { "label": "Regulations", "value": "No strict regulations on production" }
+      ],
+      "cocktails": [
+        { "name": "Long Island Iced Tea", "image": "long-island.jpg" },
+        { "name": "Harvey Wallbanger", "image": "harvey-wallbanger.jpg" },
+        { "name": "Frozen Mudslide", "image": "frozen-mudslide.jpg" }
+      ]
+    },
+    {
+      "name": "Whiskey",
+      "image": "whiskey-bottles.jpg",
+      "description": "Whiskey is versatile, used in cocktails and neat, with styles influenced by grains and regions.",
+      "facts": [
+        { "label": "Distilled From", "value": "Malted grains: corn, rye, wheat, barley" },
+        { "label": "Flavor Profile", "value": "Roasted, malted grain with oak undertones" },
+        { "label": "Aged", "value": "Typically in charred oak barrels" },
+        { "label": "Produced In", "value": "Worldwide; styles often defined by country/region" },
+        { "label": "Styles", "value": "Bourbon, Canadian, Irish, Japanese, Rye, Scotch, Tennessee, Blended, Flavored" },
+        { "label": "Alcohol Content", "value": "Typically 40–50% ABV or higher" },
+        { "label": "Regulations", "value": "Varies by country; some styles tightly regulated" }
+      ],
+      "cocktails": [
+        { "name": "Old Fashioned", "image": "old-fashioned.jpg" },
+        { "name": "Whiskey Ginger", "image": "whiskey-ginger.jpg" },
+        { "name": "Summer Peach Tea", "image": "summer-peach-tea.jpg" }
+      ]
+    }
+  ]
+}
